@@ -10,14 +10,34 @@ import java.util.Scanner;
 
 public class PasswordMethod {
 
+    public static boolean specialCharFound;
+
+    public static boolean scanPassword(char [] password) {
+        for (int i = 0 ; i < password.length ; i++) {
+            if (password [i] == '@' || password [i] == '!' ) {
+               specialCharFound = true;
+               break;
+            }
+            else {
+                specialCharFound = false;
+            }
+        }
+        return specialCharFound;
+    }
+
     public static void main(String[] args) {
 
         Scanner userInput = new Scanner(System.in);
         System.out.print("Enter a password :");
         String password = userInput.nextLine();
 
-        for (int i = 0 ; i < password.length() ; i++) {
-            char checkCharacters = password.charAt(i);
+        char [] passwordArray = password.toCharArray();
+        scanPassword(passwordArray);
+
+        if (specialCharFound) {
+            System.out.println("Special characters found!");
+        } else {
+            System.out.println("No special characters found!");
         }
 
     }
