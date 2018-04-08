@@ -1,4 +1,4 @@
-/*
+package warm_up;/*
 Given a string, return true if the first instance of "x" in the string is immediately followed by another "x".
  */
 
