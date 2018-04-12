@@ -10,9 +10,13 @@ public class Controller {
 
         newArray.printArray();
 
-        newArray.bubbleSort();
+//        newArray.bubbleSort();
+
+        newArray.selectionSort();
 
         newArray.printArray();
+
+        newArray.binarySearchForValue(19);
 
 
     }

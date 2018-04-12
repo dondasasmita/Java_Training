@@ -87,6 +87,13 @@ public class ArrayStructures {
         }
     }
 
+    //this method will be called inside the sorting methods, to swap 2 values in an array using a temp variable.
+    public void swapValues (int indexOne , int indexTwo){
+        int temp = theArray[indexOne];
+        theArray[indexOne] = theArray[indexTwo];
+        theArray [indexTwo] = temp;
+    }
+
     //bubble sort puts the biggest value into the last index
     public void bubbleSort(){
         for (int i = arraySize -1 ; i > 1 ; i--) {
@@ -94,15 +101,55 @@ public class ArrayStructures {
                 if (theArray [j] > theArray [j+1]){
                     swapValues (j, j+1);
                 }
-
             }
         }
     }
 
-    public void swapValues (int indexOne , int indexTwo){
-        int temp = theArray[indexOne];
-        theArray[indexOne] = theArray[indexTwo];
-        theArray [indexTwo] = temp;
+    //binary search, find half of the array for matching value
+    public void binarySearchForValue (int value) {
+        int lowIndex = 0;
+        int highIndex = arraySize - 1;
+        while (lowIndex <= highIndex){
+            int middleIndex = (highIndex + lowIndex) / 2;
+            if (theArray[middleIndex] < value) lowIndex = middleIndex + 1;
+            else  if (theArray[middleIndex] > value) highIndex = middleIndex - 1;
+            else {
+                System.out.println("\n Found a match for " +value + " at index " + middleIndex);
+                //break the while loop when the value is found
+                lowIndex = highIndex +1;
+            }
+        }
+
+    }
+
+
+
+    //selection sort will search index to index from lowest to highest for the smallest/highest value and make the swap
+    public void selectionSort(){
+
+        for (int i = 0; i < arraySize ; i++) {
+            int minimum = i;
+            for (int j = i; j < arraySize ; j++) {
+                if (theArray[minimum] > theArray[j]){
+                    minimum = j;
+                }
+            }
+            swapValues(i,minimum);
+        }
+    }
+
+    //insertion sort
+    public void insertionSort(){
+        for (int i = 1; i < arraySize; i++) {
+            int j = i;
+            int toInsert = theArray [i];
+            while ((j > 0) && (theArray[j-1] > toInsert)) {
+                theArray[j] = theArray[j-1];
+                j--;
+            }
+            theArray[j] = toInsert;
+        }
+
     }
 
 
