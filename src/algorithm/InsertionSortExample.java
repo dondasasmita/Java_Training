@@ -8,8 +8,8 @@ public class InsertionSortExample {
         //this will loop through the array and compare the value to the one on the left
         for (int i = 1; i < arr.length ; i++) {
 
-            //example {50, 50, 15, 20 . 40}
-            // temporary variable that holds the value of array at the current index
+            //example {50, 10, 20 , 100, 18}
+            // temporary variable that holds the value of array at the current index (index 1 to start)
             int key = arr[i];
 
             //index to compare (the one on the left of the current index)
