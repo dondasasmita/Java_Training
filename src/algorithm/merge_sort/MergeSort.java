@@ -6,7 +6,7 @@ public class MergeSort {
     // l is first index, m is the last index of the array on the left
     // the first index of the array on the right is m+1
 
-    public static void merge(int mainArray[], int l, int m, int r){
+    public static void merge(double mainArray[], int l, int m, int r){
 
         /* SPLITTING THE ARRAY */
 
@@ -15,8 +15,8 @@ public class MergeSort {
         int n2 = r - m;
 
         //create temp array
-        int L[] = new int [n1];
-        int R[] = new int [n2];
+        double L[] = new double[n1];
+        double R[] = new double[n2];
 
         //insert values to the temp array left
         for (int i = 0; i <n1 ; i++) {
@@ -70,7 +70,7 @@ public class MergeSort {
 
     // Main function that sorts arr[l..r] using
     // merge()
-    void sort(int mainArray[], int l, int r)
+    void sort(double mainArray[], int l, int r)
     {
         if (l < r)
         {

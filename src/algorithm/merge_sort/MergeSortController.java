@@ -4,12 +4,12 @@ public class MergeSortController {
 
     public static void main(String[] args) {
 
-        int randomNumArray[] = new int [30];
+        double randomNumArray[] = new double[30];
         for (int i = 0; i < randomNumArray.length ; i++) {
-            randomNumArray[i] = (int)(Math.random() * 50 +1);
+            randomNumArray[i] = Math.random() * 50 +1;
         }
 
-        for(int num : randomNumArray){
+        for(double num : randomNumArray){
             System.out.print(num + " | ");
         }
 
@@ -18,7 +18,7 @@ public class MergeSortController {
         MergeSort object = new MergeSort();
         object.sort(randomNumArray,0,randomNumArray.length-1);
 
-        for (int num : randomNumArray){
+        for (double num : randomNumArray){
             System.out.print(num + " | ");
         }
 
